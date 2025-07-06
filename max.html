@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>max element in String</title>
 </head>
 <body>
-    
+    <script>
+        function max(str) {
+            let maxChar = '';
+            let maxCount = 0;
+            const charCount = {};
+
+            for (let char of str) {
+                charCount[char] = (charCount[char] || 0) + 1;
+                if (charCount[char] > maxCount) {
+                    maxCount = charCount[char];
+                    maxChar = char;
+                }
+            }
+
+            return maxChar;
+        }
+
+        console.log(max("Arif"));
+        console.log(max("Hello World!"));
+        console.log(max("JavaScript"));
+    </script>
 </body>
 </html>
